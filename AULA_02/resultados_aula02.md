@@ -55,7 +55,46 @@ Aumentar a quantidade de exemplos para cada classe
 
 
 ========== RESULTADOS DO LAB 03 ==============
-
+  "import pandas as pd\n",
+        "from sklearn.feature_extraction.text import CountVectorizer\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "from sklearn.metrics import accuracy_score\n",
+        "\n",
+        "dados_tech = {\n",
+        "    'mensagem': [\n",
+        "        'Esqueci minha senha de acesso', 'Não consigo entrar no sistema', 'Como redefinir minha senha?',\n",
+        "        'A internet esta muito lenta', 'Sem conexao de rede no escritorio', 'Minha conexao caindo toda hora',\n",
+        "        'Impressora nao esta funcionando', 'Nao consigo imprimir documentos', 'Impressora travada com papel'\n",
+        "    ],\n",
+        "    'intencao': [\n",
+        "        'reset_senha', 'reset_senha', 'reset_senha',\n",
+        "        'problema_conexao', 'problema_conexao', 'problema_conexao',\n",
+        "        'suporte_impressora', 'suporte_impressora', 'suporte_impressora'\n",
+        "    ]\n",
+        "}\n",
+        "df3 = pd.DataFrame(dados_tech)\n",
+        "\n",
+        "# TODO 1: Separação de X e y\n",
+        "X = df3['mensagem']\n",
+        "y = df3['intencao']\n",
+        "\n",
+        "# TODO 2: Divisão treino (70%) / teste (30%)\n",
+        "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42)\n",
+        "\n",
+        "# TODO 3: Vetorização com CountVectorizer\n",
+        "vectorizer = CountVectorizer()\n",
+        "X_train_vec = vectorizer.fit_transform(X_train)\n",
+        "X_test_vec = vectorizer.transform(X_test)\n",
+        "\n",
+        "# TODO 4: Instanciar e treinar a Árvore de Decisão\n",
+        "modelo_arvore = DecisionTreeClassifier(random_state=42)\n",
+        "modelo_arvore.fit(X_train_vec, y_train)\n",
+        "\n",
+        "# TODO 5: Predições e acurácia\n",
+        "predicoes = modelo_arvore.predict(X_test_vec)\n",
+        "acuracia = accuracy_score(y_test, predicoes)\n",
+        "print(f\"Acurácia do Modelo: {acuracia * 100:.2f}%\")"
 
 1- Por que a acurácia engana num dataset tão pequeno?
 
