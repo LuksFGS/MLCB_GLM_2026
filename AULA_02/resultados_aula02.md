@@ -1,7 +1,3 @@
-========== PRODUÇÃO DO RELATÓRIO ==============
-
-#Para a entrega completa deste LAB01 você precisa copiar a saída do código (output) e adicionar as repostas das perguntas abaixo:
-
 ========== RESULTADOS DO LAB 01 ==============
 
 Mensagem: 'Quero consultar quanto dinheiro tenho' ==> Intenção Predita: [fazer_pix]
@@ -24,4 +20,9 @@ Aumentar o volume de dados e balancear os exemplos.
 
 O LogisticRegression é o modelo de classificação responsável por aprender a relação entre as palavras presentes nas mensagens (representadas como vetores numéricos pelo CountVectorizer) e as intenções (rótulos/classes).
 
+========== RESULTADOS DO LAB 02 ==============
+
+========== RESULTADOS DO LAB 03 ==============
+
+========== RESULTADOS DO LAB 04 ==============
 
