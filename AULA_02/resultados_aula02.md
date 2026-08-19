@@ -37,7 +37,9 @@ Classe [troca_devolucao]: 47.46%
 **1 - Avaliem os resultados e verifiquem se os resultados foram corretos ou incorretos. Coloque a resposta no arquivo do relatório do laboratório**
   
 A primeira resposta está **incorreta**, pois o cliente quer uma devolução, não o valor do frete.
+
 A segunda resposta está **incorreta**, o cliente não pediu pra rastrear o pedido.
+
 A terceira resposta está **correta**.
 
 **2 - Detectado algum erro, qual seria a maneira mais correta de melhorar o resultado do algoritmo?**
