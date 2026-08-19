@@ -55,38 +55,7 @@ Aumentar a quantidade de exemplos para cada classe
 
 
 ========== RESULTADOS DO LAB 03 ==============
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": []
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "code",
-      "execution_count": 1,
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "Bk62igNUxaP2",
-        "outputId": "62e5c9e0-9134-499b-c8e3-a9d89643e210"
-      },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Acurácia do Modelo: 33.33%\n"
+
 
 1- Por que a acurácia engana num dataset tão pequeno?
 
