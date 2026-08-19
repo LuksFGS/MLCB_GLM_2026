@@ -1,4 +1,5 @@
 ========== PRODUÇÃO DO RELATÓRIO ==============
+
 #Para a entrega completa deste LAB01 você precisa copiar a saída do código (output) e adicionar as repostas das perguntas abaixo:
 
 ========== RESULTADOS DO LAB 01 ==============
