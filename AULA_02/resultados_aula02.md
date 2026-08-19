@@ -9,7 +9,9 @@ Mensagem: 'Gostaria de cancelar meu cartão de crédito' ==> Intenção Predita:
 **1 - Avaliem os resultados e verifiquem se os resultados foram corretos ou incorretos.**
 
 A primeira resposta está **incorreta**, já que verificar quantidade de dinheiro, não é o mesmo que pedir para realizar um pix.
+
 A segunda resposta está **correta**.
+
 A terceira resposta está **incorreta**, o cliente solicitou cancelamento de cartão, não de conta, embora não tenha essa opção para o bot.
 
 **2 - Detectado algum erro, qual seria a maneira mais correta de melhorar o resultado do algoritmo?**
