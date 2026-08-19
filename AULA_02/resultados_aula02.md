@@ -110,11 +110,11 @@ Por isso, esse resultado pode não mostrar realmente se o modelo é bom ou ruim.
 A Árvore de Decisão analisa as palavras das frases e faz algumas perguntas para decidir a intenção.
 
 Por exemplo:
-
+```
     Tem a palavra "senha"?
     Tem a palavra "pedido"?
     Tem a palavra "internet"?
-
+```
 Com essas respostas, ela vai seguindo um caminho na árvore até chegar na intenção que considera correta.
 
 3- Qual o risco de não limitar max_depth?
