@@ -55,6 +55,68 @@ Aumentar a quantidade de exemplos para cada classe
 
 
 ========== RESULTADOS DO LAB 03 ==============
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Bk62igNUxaP2",
+        "outputId": "62e5c9e0-9134-499b-c8e3-a9d89643e210"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Acurácia do Modelo: 33.33%\n"
+
+1- Por que a acurácia engana num dataset tão pequeno?
+
+Porque temos poucos exemplos. São apenas 9 frases, e somente 3 foram usadas para teste.
+
+Então, cada frase vale 33,33% da acurácia. Se acertasse mais uma, já iria para 66,67%.
+
+Por isso, esse resultado pode não mostrar realmente se o modelo é bom ou ruim. O ideal seria ter mais frases para testar o modelo.
+
+2- Como a Árvore de Decisão separa as intenções?
+
+A Árvore de Decisão analisa as palavras das frases e faz algumas perguntas para decidir a intenção.
+
+Por exemplo:
+
+    Tem a palavra "senha"?
+    Tem a palavra "pedido"?
+    Tem a palavra "internet"?
+
+Com essas respostas, ela vai seguindo um caminho na árvore até chegar na intenção que considera correta.
+
+3- Qual o risco de não limitar max_depth?
+
+O principal risco é o overfitting.
+
+Isso acontece quando a árvore fica muito grande e começa a decorar os exemplos do treinamento.
+
+Assim, ela pode acertar muito bem as frases que já conhece, mas errar quando recebe frases novas.
+
+Por isso, usamos o max_depth para limitar o tamanho da árvore e tentar fazer com que ela aprenda de uma forma mais geral.       
 
 ========== RESULTADOS DO LAB 04 ==============
 
