@@ -130,11 +130,11 @@ print(f"Acurácia do Modelo: {acuracia * 100:.2f}%")
 ========== RESULTADOS DO LAB 04 ==============
 
 
-[PROPOSTA]
+PROPOSTA
 Você foi contratado para criar o protótipo do motor de Natural Language Understanding (NLU)
 de um Chatbot para uma Agência de Viagens.
 
-[REQUISITOS OBRIGATÓRIOS]
+REQUISITOS OBRIGATÓRIOS
 1. Criar um dataset próprio em um DataFrame Pandas com no mínimo 12 frases distribuídas em
    pelo menos 3 intenções distintas (ex: 'comprar_passagem', 'cancelar_reserva', 'falar_atendente').
 2. Realizar a divisão em conjuntos de Treino e Teste usando `train_test_split`.
@@ -143,7 +143,7 @@ de um Chatbot para uma Agência de Viagens.
 5. Treinar o modelo e realizar predições com no mínimo 3 frases INÉDITAS (que não estavam no treino).
 6. Exibir as intenções previstas no console.
 
-[ENTREGA]
+ENTREGA
 Construa o código em um notebook (.ipynb), execute, salve no repositório e registre os resultados
 e a justificativa técnica no arquivo 'resultados_aula02.md'.
 ================================================================================
