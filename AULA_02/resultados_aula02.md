@@ -55,8 +55,48 @@ Aumentar a quantidade de exemplos para cada classe
 
 
 ========== RESULTADOS DO LAB 03 ==============
+```
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
+dados_tech = {
+    'mensagem': [
+        'Esqueci minha senha de acesso', 'Não consigo entrar no sistema', 'Como redefinir minha senha?',
+        'A internet esta muito lenta', 'Sem conexao de rede no escritorio', 'Minha conexao caindo toda hora',
+        'Impressora nao esta funcionando', 'Nao consigo imprimir documentos', 'Impressora travada com papel'
+    ],
+    'intencao': [
+        'reset_senha', 'reset_senha', 'reset_senha',
+        'problema_conexao', 'problema_conexao', 'problema_conexao',
+        'suporte_impressora', 'suporte_impressora', 'suporte_impressora'
+    ]
+}
+df3 = pd.DataFrame(dados_tech)
 
+# TODO 1: Separação de X e y
+X = df3['mensagem']
+y = df3['intencao']
+
+# TODO 2: Divisão treino (70%) / teste (30%)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42)
+
+# TODO 3: Vetorização com CountVectorizer
+vectorizer = CountVectorizer()
+X_train_vec = vectorizer.fit_transform(X_train)
+X_test_vec = vectorizer.transform(X_test)
+
+# TODO 4: Instanciar e treinar a Árvore de Decisão
+modelo_arvore = DecisionTreeClassifier(random_state=42)
+modelo_arvore.fit(X_train_vec, y_train)
+
+# TODO 5: Predições e acurácia
+predicoes = modelo_arvore.predict(X_test_vec)
+acuracia = accuracy_score(y_test, predicoes)
+print(f"Acurácia do Modelo: {acuracia * 100:.2f}%")
+```
 1- Por que a acurácia engana num dataset tão pequeno?
 
 Porque temos poucos exemplos. São apenas 9 frases, e somente 3 foram usadas para teste.
