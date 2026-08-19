@@ -129,6 +129,24 @@ print(f"Acurácia do Modelo: {acuracia * 100:.2f}%")
 
 ========== RESULTADOS DO LAB 04 ==============
 
+
+[PROPOSTA]
+Você foi contratado para criar o protótipo do motor de Natural Language Understanding (NLU)
+de um Chatbot para uma Agência de Viagens.
+
+[REQUISITOS OBRIGATÓRIOS]
+1. Criar um dataset próprio em um DataFrame Pandas com no mínimo 12 frases distribuídas em
+   pelo menos 3 intenções distintas (ex: 'comprar_passagem', 'cancelar_reserva', 'falar_atendente').
+2. Realizar a divisão em conjuntos de Treino e Teste usando `train_test_split`.
+3. Escolher um vetorizador de texto (CountVectorizer ou TfidfVectorizer).
+4. Escolher um algoritmo de classificação (LogisticRegression, MultinomialNB ou DecisionTreeClassifier).
+5. Treinar o modelo e realizar predições com no mínimo 3 frases INÉDITAS (que não estavam no treino).
+6. Exibir as intenções previstas no console.
+
+[ENTREGA]
+Construa o código em um notebook (.ipynb), execute, salve no repositório e registre os resultados
+e a justificativa técnica no arquivo 'resultados_aula02.md'.
+================================================================================
     Mensagem: 'Quero marcar uma passagem para Fortaleza' ==> Intenção Predita: [comprar_passagem]
     Mensagem: 'Preciso cancelar minha viagem de fim de semana' ==> Intenção Predita: [cancelar_reserva]
     Mensagem: 'Queria falar com uma pessoa do atendimento' ==> Intenção Predita: [cancelar_reserva]
@@ -141,10 +159,3 @@ print(f"Acurácia do Modelo: {acuracia * 100:.2f}%")
     "Queria falar com uma pessoa do atendimento" → errou, previu cancelar_reserva em vez de falar_atendente. Reparei que essa frase não usa nenhuma das palavras "atendente", "ajuda", "pessoa" ou "suporte" do jeito que apareceram no treino (ela usa "atendimento", que é uma palavra diferente pro modelo, já que o TF-IDF/Naive Bayes não entende que            "atendente" e "atendimento" têm a mesma raiz). Como o meu dataset da classe falar_atendente só tem 3 frases (bem menos que as outras), acho que isso também deixou essa classe mais fraca e mais fácil de errar.
 
     Isso me fez perceber, na prática, o mesmo problema que já tínhamos visto no LAB01 e no LAB03: com dataset pequeno e desbalanceado (a classe falar_atendente tem só 3 exemplos contra 5 e 4 das outras), o modelo fica muito dependente de repetir exatamente as mesmas palavras vistas no treino, e qualquer variação de vocabulário (como "atendimento" em       vez de "atendente") pode confundir a previsão. Se eu fosse melhorar, tentaria equilibrar o número de frases por intenção e incluir mais variações de palavras pra cada classe, principalmente pra falar_atendente.
-    
-    Meu raciocínio pra montar o desafio
-
-    Como não tinha um esqueleto de código pra seguir dessa vez, tentei me basear no jeito que os labs anteriores (LAB01 e LAB03) foram montados pelo professor, só trocando o assunto pra agência de viagens. Escolhi:
-
-    Vetorizador: TfidfVectorizer em vez do CountVectorizer que a gente usou nos labs anteriores. Quis testar ele porque, nos exercícios passados, vimos que o CountVectorizer só conta quantas vezes cada palavra aparece, e o TfidfVectorizer também leva em conta o quão "importante"/rara é aquela palavra no conjunto todo, então pensei que poderia ajudar o     modelo a focar nas palavras que realmente diferenciam cada intenção (tipo "cancelar", "passagem", "atendente").
-    Algoritmo: MultinomialNB (Naive Bayes). Escolhi ele porque, pesquisando um pouco, vi que é um dos algoritmos mais usados pra classificação de texto e costuma funcionar bem mesmo com poucos dados, então quis experimentar em vez de repetir o LogisticRegression/DecisionTreeClassifier que já tínhamos usado.
