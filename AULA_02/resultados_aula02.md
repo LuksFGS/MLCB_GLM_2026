@@ -47,13 +47,11 @@ A terceira resposta está **correta**.
 
 **2 - Detectado algum erro, qual seria a maneira mais correta de melhorar o resultado do algoritmo?**
 
-
+Aumentar a quantidade de exemplos para cada classe
 
  **3 - Detalhe a função do Naive Bayes no algorítmo.**
 
- Todos os resultados devem ser inseridos no arquivo resultados_aula02.md
-
-#========== FIM ==============
+ O Naive Bayes é um algoritmo que classifica tentando adivinhar a intenção do usuário
 
 
 ========== RESULTADOS DO LAB 03 ==============
