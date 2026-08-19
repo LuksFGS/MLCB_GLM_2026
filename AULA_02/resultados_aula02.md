@@ -129,3 +129,22 @@ print(f"Acurácia do Modelo: {acuracia * 100:.2f}%")
 
 ========== RESULTADOS DO LAB 04 ==============
 
+    Mensagem: 'Quero marcar uma passagem para Fortaleza' ==> Intenção Predita: [comprar_passagem]
+    Mensagem: 'Preciso cancelar minha viagem de fim de semana' ==> Intenção Predita: [cancelar_reserva]
+    Mensagem: 'Queria falar com uma pessoa do atendimento' ==> Intenção Predita: [cancelar_reserva]
+    Justificativa técnica / minhas observações
+
+    Das 3 frases inéditas, o modelo acertou 2:
+
+    "Quero marcar uma passagem para Fortaleza" → acertou comprar_passagem (acho que porque "passagem" apareceu bastante nos exemplos de treino dessa classe).
+    "Preciso cancelar minha viagem de fim de semana" → acertou cancelar_reserva (a palavra "cancelar" tem bastante peso no TF-IDF pra essa classe).
+    "Queria falar com uma pessoa do atendimento" → errou, previu cancelar_reserva em vez de falar_atendente. Reparei que essa frase não usa nenhuma das palavras "atendente", "ajuda", "pessoa" ou "suporte" do jeito que apareceram no treino (ela usa "atendimento", que é uma palavra diferente pro modelo, já que o TF-IDF/Naive Bayes não entende que            "atendente" e "atendimento" têm a mesma raiz). Como o meu dataset da classe falar_atendente só tem 3 frases (bem menos que as outras), acho que isso também deixou essa classe mais fraca e mais fácil de errar.
+
+    Isso me fez perceber, na prática, o mesmo problema que já tínhamos visto no LAB01 e no LAB03: com dataset pequeno e desbalanceado (a classe falar_atendente tem só 3 exemplos contra 5 e 4 das outras), o modelo fica muito dependente de repetir exatamente as mesmas palavras vistas no treino, e qualquer variação de vocabulário (como "atendimento" em       vez de "atendente") pode confundir a previsão. Se eu fosse melhorar, tentaria equilibrar o número de frases por intenção e incluir mais variações de palavras pra cada classe, principalmente pra falar_atendente.
+    
+    Meu raciocínio pra montar o desafio
+
+    Como não tinha um esqueleto de código pra seguir dessa vez, tentei me basear no jeito que os labs anteriores (LAB01 e LAB03) foram montados pelo professor, só trocando o assunto pra agência de viagens. Escolhi:
+
+    Vetorizador: TfidfVectorizer em vez do CountVectorizer que a gente usou nos labs anteriores. Quis testar ele porque, nos exercícios passados, vimos que o CountVectorizer só conta quantas vezes cada palavra aparece, e o TfidfVectorizer também leva em conta o quão "importante"/rara é aquela palavra no conjunto todo, então pensei que poderia ajudar o     modelo a focar nas palavras que realmente diferenciam cada intenção (tipo "cancelar", "passagem", "atendente").
+    Algoritmo: MultinomialNB (Naive Bayes). Escolhi ele porque, pesquisando um pouco, vi que é um dos algoritmos mais usados pra classificação de texto e costuma funcionar bem mesmo com poucos dados, então quis experimentar em vez de repetir o LogisticRegression/DecisionTreeClassifier que já tínhamos usado.
