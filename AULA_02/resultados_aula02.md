@@ -146,7 +146,7 @@ REQUISITOS OBRIGATÓRIOS
 ENTREGA
 Construa o código em um notebook (.ipynb), execute, salve no repositório e registre os resultados
 e a justificativa técnica no arquivo 'resultados_aula02.md'.
-================================================================================
+
     Mensagem: 'Quero marcar uma passagem para Fortaleza' ==> Intenção Predita: [comprar_passagem]
     Mensagem: 'Preciso cancelar minha viagem de fim de semana' ==> Intenção Predita: [cancelar_reserva]
     Mensagem: 'Queria falar com uma pessoa do atendimento' ==> Intenção Predita: [cancelar_reserva]
