@@ -41,7 +41,7 @@ horario_atendimento       0.50      1.00      0.67         1
 ```
 1 - O que representam as métricas Precision, Recall e F1-Score no relatório?
 
-    Precision é a quantidade que o Modelo acertou a resposta
+    Precision é a quantidade que o Modelo acertou a resposta.
     Recall é a quantidade de todas as mensagens reais da intenção correta, que o bot conseguiu encontrar.
     F1-Score é a média entre precision e recall.
     
@@ -51,6 +51,6 @@ horario_atendimento       0.50      1.00      0.67         1
 
 3 - Por que a acurácia isolada pode ser enganosa quando temos classes desbalanceadas?
 
-    
+    A acurácia é só a proporção de acertos totais, sem separar por classe. Isso é um problema quando as classes estão desbalanceadas (uma classe tem muito mais exemplos que as outras), porque o modelo pode "trapacear" simplesmente chutando sempre a classe majoritária e ainda assim parecer bom. Por isso usamos métricas como precision, recall e f1-score.
 
 # Lab 03
