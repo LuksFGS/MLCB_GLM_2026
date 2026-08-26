@@ -98,6 +98,7 @@ horario_atendimento       0.50      1.00      0.67         1
     
     #TODO 5: Predição e acurácia
     predicoes = pipeline.predict(X_test)
+    print(f"--- RESULTADOS DO LAB 03 (AULA 03) ---")
     print(f"Acuracia via Pipeline: {accuracy_score(y_test, predicoes) * 100:.2f}%")
 
     --- RESULTADOS DO LAB 03 (AULA 03) ---
