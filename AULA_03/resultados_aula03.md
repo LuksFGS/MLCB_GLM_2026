@@ -54,3 +54,59 @@ horario_atendimento       0.50      1.00      0.67         1
     A acurácia é só a proporção de acertos totais, sem separar por classe. Isso é um problema quando as classes estão desbalanceadas (uma classe tem muito mais exemplos que as outras), porque o modelo pode "trapacear" simplesmente chutando sempre a classe majoritária e ainda assim parecer bom. Por isso usamos métricas como precision, recall e f1-score.
 
 # Lab 03
+
+1 - Cole o código corrigido e a acurácia obtida.
+
+    import pandas as pd
+    from sklearn.pipeline import Pipeline
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import accuracy_score
+
+    dados_rh = {
+    'mensagem': [
+        'Como solicitar minhas ferias?', 'Quero agendar meu periodo de ferias',
+        'Onde baixo meu holerite do mes?', 'Preciso do comprovante de rendimentos',
+        'Como cadastrar meu atestado medico?', 'Onde envio o atestado de consulta?'
+    ],
+    'intencao': [
+        'solicitar_ferias', 'solicitar_ferias',
+        'obter_holerite', 'obter_holerite',
+        'enviar_atestado', 'enviar_atestado'
+    ]
+    }
+    df3 = pd.DataFrame(dados_rh)
+
+    #TODO 1: Separando X e y
+    X = df3['mensagem']
+    y = df3['intencao']
+
+    #TODO 2: Split treino/teste
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.33, random_state=42
+    )
+    
+    #TODO 3: Montando o Pipeline
+    pipeline = Pipeline([
+        ('vectorizer', TfidfVectorizer(stop_words=['de', 'o', 'meu', 'minhas'])),
+        ('classifier', LogisticRegression())
+    ])
+
+    #TODO 4: Treinando o pipeline com os dados BRUTOS (texto puro)
+    pipeline.fit(X_train, y_train)
+    
+    #TODO 5: Predição e acurácia
+    predicoes = pipeline.predict(X_test)
+    print(f"Acuracia via Pipeline: {accuracy_score(y_test, predicoes) * 100:.2f}%")
+
+    --- RESULTADOS DO LAB 03 (AULA 03) ---
+    Acuracia via Pipeline: 0.00%
+
+2 - Qual é a grande vantagem de utilizar o objeto Pipeline no Scikit-Learn?
+
+    Ele junta várias etapas (vetorizador + classificador) em um único objeto, então eu só preciso chamar .fit() e .predict() uma vez, sem executar cada etapa na mão.
+
+3 - Por que o Pipeline evita que erros de pré-processamento ocorram entre treino e teste?
+
+    Por que evita erros entre treino e teste, o Pipeline garante que o vetorizador só "aprende" o vocabulário (fit) com os dados de treino, e nos dados de teste ele só aplica (transform) esse vocabulário já aprendido, sem re-treinar. Isso evita o vazamento de dados (data leakage).
