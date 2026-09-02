@@ -13,12 +13,14 @@
 
 2 - Análise dos Testes de Entrada ("input()")
 ```
-* Comportamento do KNN (10 testes): [Como o KNN reagiu às variações das frases digitadas e ao fallback?]
-* Comportamento da Decision Tree (8 testes): [Como a Árvore de Decisão se comportou em comparação ao KNN?]
+*KNN:* Teve melhores resultados, acertando frases relacionadas ao tema e apresentando diferentes níveis de confiança. Também acionou o fallback em uma frase fora do contexto.
+*Decision Tree:* Não acionou o fallback nenhuma vez e sempre apresentou *100% de confiança*, mesmo em classificações erradas ou frases sem relação com o dataset.
 ```
 
 3 - Veredito Final
 ```
-* Melhor modelo para este projeto: [KNN ou Decision Tree]
-* Justificativa técnica: [Explique a escolha com base nas métricas estatísticas e no comportamento do fallback]
+*Melhor modelo: KNN (K=3).*
+O KNN apresentou *100% de acurácia e F1-score, contra **80% da Decision Tree*, além de lidar melhor com incertezas por meio da variação da confiança e do fallback.
 ```
+
+
