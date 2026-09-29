@@ -1,6 +1,16 @@
+# Resultados Atividade 2
 
-
+## Output 1 
 <img width="1698" height="804" alt="image" src="https://github.com/user-attachments/assets/af980515-1266-4185-a059-be7433eae5ea" />
+
+## Output 2
+<img width="1620" height="724" alt="image" src="https://github.com/user-attachments/assets/03058e4f-0c64-4dee-b347-52dbba86ffd6" />
+
+## Output 3
+<img width="1616" height="770" alt="image" src="https://github.com/user-attachments/assets/63875d1a-1267-4251-8d45-8563379c9cac" />
+
+## Output 4
+<img width="1642" height="758" alt="image" src="https://github.com/user-attachments/assets/8198ccda-c1d8-4c15-aad9-d4741809e677" />
 
 
 # Resultados dos Labs 01, 02 e 03
