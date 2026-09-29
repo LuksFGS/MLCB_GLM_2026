@@ -1,4 +1,8 @@
 
+
+<img width="1698" height="804" alt="image" src="https://github.com/user-attachments/assets/af980515-1266-4185-a059-be7433eae5ea" />
+
+
 # Resultados dos Labs 01, 02 e 03
 
 ## LAB 01 - Troca do Algoritmo de Classificação
